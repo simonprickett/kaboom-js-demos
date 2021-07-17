@@ -1,0 +1,23 @@
+{
+  "name": "kaboom-js-demos",
+  "version": "1.0.0",
+  "description": "Kaboom.js game demos.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/http-server/bin/http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonprickett/kaboom-js-demos.git"
+  },
+  "author": "Simon Prickett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonprickett/kaboom-js-demos/issues"
+  },
+  "homepage": "https://github.com/simonprickett/kaboom-js-demos#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
