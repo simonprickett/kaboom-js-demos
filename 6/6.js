@@ -118,9 +118,14 @@ window.onload = function () {
 
     addLevel(layout, roomConf);
 
-    // Delete any key if the player already has it...
-    // TODO
-
+    // Delete the key if one exists and the player already has it...
+    if (playerHasKey) {
+      const keys = get('key');
+      if (keys.length > 0) {
+        destroy(keys[0]);
+      }
+    }
+    
     const player = get('player')[0];
 
     const directions = {
@@ -143,8 +148,11 @@ window.onload = function () {
     });
 
     player.overlaps('lockeddoor', (d) => {
-      // TODO open if player has key...
-      camShake(10);
+      if (playerHasKey) {
+        go('winner');
+      } else {
+        camShake(10);
+      }
     });
 
     player.overlaps('key', (k) => {
@@ -161,10 +169,23 @@ window.onload = function () {
     add([
       text('press space to begin!', 6),
       pos(width() / 2, height() / 2),
-      origin('center'),
+      origin('center')
     ]);
 
     keyPress('space', () => {
+      go('room', 0);
+    });
+  });
+
+  scene('winner', () => {
+    add([
+      text('well done! space restarts.', 6),
+      pos(width() / 2, height() / 2),
+      origin('center')
+    ]);
+
+    keyPress('space', () => {
+      playerHasKey = false;
       go('room', 0);
     });
   });
