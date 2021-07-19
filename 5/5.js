@@ -157,7 +157,7 @@ window.onload = function () {
     add([
       text('press space to begin!', 6),
       pos(width() / 2, height() / 2),
-      origin('center'),
+      origin('center')
     ]);
 
     keyPress('space', () => {
