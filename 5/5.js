@@ -17,6 +17,8 @@ window.onload = function () {
   loadSprite('door', 'sprites/door.png');
   loadSprite('lockeddoor', 'sprites/lockeddoor.png');
 
+  let playerHasKey = false;
+
   scene('room', (roomId) => {
     const roomLayouts = [
       [ "=====1======",
@@ -117,8 +119,6 @@ window.onload = function () {
     addLevel(layout, roomConf);
 
     const player = get('player')[0];
-
-    let playerHasKey = false;
 
     const directions = {
       'left': vec2(-1, 0),
