@@ -1,6 +1,6 @@
 # Kaboom.js Demos
 
-Demos using the Kaboom.js game framework to support my Meetup talk.
+Demos using the [Kaboom.js](https://kaboomjs.com/) game framework to support my Meetup talk.
 
 ## Getting Up and Running
 
